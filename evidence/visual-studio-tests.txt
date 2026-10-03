@@ -1,0 +1,13 @@
+Visual Studio 2026 Test Explorer
+Selected interpreter: Python 3.14 (64-bit)
+Project: BasicShapes.pyproj
+Observed UI result:
+439 button 43 total tests Description: 43 total tests
+442 button 43 passed tests (shift+click to toggle) Description: 43 passed tests (shift+click to toggle)
+445 button 0 failed tests (shift+click to toggle) Description: 0 failed tests (shift+click to toggle)
+467 text Test run finished: 43 Tests (43 Passed, 0 Failed, 0 Skipped) run in 10 sec ID: StatusBar
+468 button 0 Warnings Description: Click to navigate to the Tests Output Pane ID: WarningButton
+470 text 0 Warnings ID: WarningTextBlock
+471 button 0 Errors Description: Click to navigate to the Tests Output Pane ID: ErrorButton
+473 text 0 Errors ID: ErrorTextBlock
+552 tree view item (selectable) Project: basic-shapes Passed (43)

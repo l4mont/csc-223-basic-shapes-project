@@ -5,6 +5,8 @@ venv/
 env/
 .idea/
 .vs/
+*.pyproj.user
+*.suo
 .vscode/
 .pytest_cache/
 .coverage
