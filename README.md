@@ -1,6 +1,6 @@
 # Basic Shapes Project
 
-Emory Bruington — CSC 223
+Emory Bruington â€” CSC 223
 
 A Python class hierarchy using an abstract `BasicShape`, `Circle`, `Rectangle`, and `Square`. Properties validate dimensions and update areas automatically.
 
@@ -18,6 +18,6 @@ python -m unittest discover -s tests -v
 ## Report and verification
 
 - [Project report (PDF)](report/Basic_Shapes_Report.pdf)
-- [Editable report](report/Basic_Shapes_Report.md)
+- [Completed teacher template (Word)](report/Basic_Shapes_Report.docx)
 - 43 unit tests passed in Visual Studio 2026 with Python 3.14.
 - Recorded results are in `evidence/`.
