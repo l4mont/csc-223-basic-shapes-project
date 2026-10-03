@@ -15,6 +15,7 @@ class Square(Rectangle):
         """Positive finite real side; changes synchronize all dimensions and area.
 
         Wrong types raise TypeError; nonpositive/nonfinite values raise ValueError.
+        Values whose area overflows or underflows also raise ValueError.
         Rejected values leave the previous valid state unchanged.
         """
         return self._side
@@ -23,6 +24,7 @@ class Square(Rectangle):
     def side(self, value):
         """Validate first, then update all dimensions before calculating area."""
         value = self._validate_number(value, "side", positive=True)
+        self._validate_number(value * value, "area", positive=True)
         self._side = self._length = self._width = value
         self.calc_area()
 

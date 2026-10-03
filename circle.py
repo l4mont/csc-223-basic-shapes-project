@@ -40,13 +40,17 @@ class Circle(BasicShape):
         """Positive finite real radius; changes recalculate area automatically.
 
         Wrong types raise TypeError; nonpositive/nonfinite values raise ValueError.
+        Values whose area overflows or underflows also raise ValueError.
         """
         return self._radius
 
     @radius.setter
     def radius(self, value):
         """Validate and store the radius before invoking the area calculation."""
-        self._radius = self._validate_number(value, "radius", positive=True)
+        value = self._validate_number(value, "radius", positive=True)
+        # Check the prospective area before changing an existing valid object.
+        self._validate_number(pi * value * value, "area", positive=True)
+        self._radius = value
         self.calc_area()
 
     def calc_area(self):

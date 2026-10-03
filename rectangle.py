@@ -17,13 +17,17 @@ class Rectangle(BasicShape):
         """Positive finite real length; changes update area once width exists.
 
         Wrong types raise TypeError; nonpositive/nonfinite values raise ValueError.
+        A change producing an overflowing or underflowing area raises ValueError.
         """
         return self._length
 
     @length.setter
     def length(self, value):
         """Validate length before assignment, then update area when initialized."""
-        self._length = self._validate_number(value, "length", positive=True)
+        value = self._validate_number(value, "length", positive=True)
+        if hasattr(self, "_width"):
+            self._validate_number(value * self._width, "area", positive=True)
+        self._length = value
         # The first constructor assignment happens before width exists.
         if hasattr(self, "_width"):
             self.calc_area()
@@ -33,13 +37,17 @@ class Rectangle(BasicShape):
         """Positive finite real width; changes update area once length exists.
 
         Wrong types raise TypeError; nonpositive/nonfinite values raise ValueError.
+        A change producing an overflowing or underflowing area raises ValueError.
         """
         return self._width
 
     @width.setter
     def width(self, value):
         """Validate width before assignment, then update area when initialized."""
-        self._width = self._validate_number(value, "width", positive=True)
+        value = self._validate_number(value, "width", positive=True)
+        if hasattr(self, "_length"):
+            self._validate_number(self._length * value, "area", positive=True)
+        self._width = value
         if hasattr(self, "_length"):
             self.calc_area()
 
